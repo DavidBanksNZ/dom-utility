@@ -31,7 +31,7 @@ var boxes = $DOM('.boxes');
 
 
 
-<a name="text" href="#text">#</a> <b>el.text</b>([text])
+<a name="text" href="#text">#</a> <b>el.text</b>([<i>text</i>])
 
 Use the text() method to get or set the text content of an element. 
 
@@ -45,7 +45,7 @@ var text = $domEl.text();
 
 
 
-<a name="html" href="#html">#</a> <b>el.html</b>([html])
+<a name="html" href="#html">#</a> <b>el.html</b>([<i>html</i>])
 
 Use the html() method to get or set the html content of an element. 
 
@@ -59,7 +59,7 @@ var text = $domEl.html();
 
 
 
-<a name="attr" href="#attr">#</a> <b>el.attr</b>(attrName[, attrValue])
+<a name="attr" href="#attr">#</a> <b>el.attr</b>(<i>attrName</i>[, <i>attrValue</i>])
 
 Use the attr() method to get or set attributes on an element. 
 
@@ -73,7 +73,7 @@ var lastUpdated = $table.attr('data-updated');
 
 
 
-<a name="prop" href="#prop">#</a> <b>el.prop</b>(propName[, propValue])
+<a name="prop" href="#prop">#</a> <b>el.prop</b>(<i>propName</i>[, <i>propValue</i>])
 
 Use the prop() method to get or set properties on an element. 
 
@@ -87,7 +87,7 @@ var enteredValue = $input.prop('value');
 
 
 
-<a name="has-class" href="#has-class">#</a> <b>el.hasClass</b>(className)
+<a name="has-class" href="#has-class">#</a> <b>el.hasClass</b>(</>className</i>)
 
 Use the hasClass() method to check whether a class is set on an element. 
 
@@ -97,7 +97,7 @@ var isAwesome = $domEl.hasClass('awesome-text');
 
 
 
-<a name="add-class" href="#add-class">#</a> <b>el.addClass</b>(className)
+<a name="add-class" href="#add-class">#</a> <b>el.addClass</b>(<i>className</i>)
 
 Use the addClass() method to add a class to an element, if it is not already set.
 
@@ -108,7 +108,7 @@ $domEl.addClass('awesome-text');
 
 
 
-<a name="remove-class" href="#remove-class">#</a> <b>el.removeClass</b>(className)
+<a name="remove-class" href="#remove-class">#</a> <b>el.removeClass</b>(<i>className</i>)
 
 Use the removeClass() method to remove a class on an element. 
 
@@ -119,7 +119,7 @@ $domEl.removeClass('awesome-text');
 
 
 
-<a name="toggle-class" href="#toggle-class">#</a> <b>el.toggleClass</b>(className)
+<a name="toggle-class" href="#toggle-class">#</a> <b>el.toggleClass</b>(<i>className</i>)
 
 Use the toggleClass() method to toggle a class on an element. 
 
@@ -162,7 +162,7 @@ items.forEach(function($item) {
 
 
 
-<a name="find" href="#find">#</a> <b>el.find</b>(selector)
+<a name="find" href="#find">#</a> <b>el.find</b>(<i>selector</i>)
 
 Use the find() method to get the descendant elements of the given element that match a provided selector. This will return an array of $DOM objects.
 
@@ -188,7 +188,7 @@ $domEl.remove();
 
 
 
-<a name="append" href="#append">#</a> <b>el.append</b>(elem)
+<a name="append" href="#append">#</a> <b>el.append</b>(<i>elem</i>)
 
 Use the append() method to insert an element as the last child of a parent element. This will return the appended element as a $DOM object.
 
@@ -207,7 +207,7 @@ $myList.append('<li>')
 
 
 
-<a name="prepend" href="#prepend">#</a> <b>el.prepend</b>(elem)
+<a name="prepend" href="#prepend">#</a> <b>el.prepend</b>(<i>elem</i>)
 
 Use the prepend() method to insert an element as the first child of a parent element. This will return the prepended element as a $DOM object. See <a name="append" href="#append">el.append()</a> for all the ways you can use this method.
 
@@ -265,7 +265,7 @@ $item.data(null);
 
 
 
-<a name="on" href="#on">#</a> <b>el.on</b>(eventType, handlerFunc[, context])
+<a name="on" href="#on">#</a> <b>el.on</b>(<i>eventType</i>, <i>handlerFunc</i>[, <i>context</i>])
 
 Use the on() method add an event listener to an element. The optional argument context allows a custom value to be set for <b>this</b> inside the hander function. It defaults to the $DOM object that the event listener is being added to.
 
