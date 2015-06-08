@@ -9,26 +9,6 @@ This is the code accompanying my series of blog posts on building your own DOM u
 
 [Build your own DOM utility Part 3](http://davidbanks.co.nz/post/build-your-own-dom-utility-part-3)
 
-Provides these methods:
-
-- text()
-- html()
-- attr()
-- prop()
-- hasClass()
-- addClass()
-- removeClass()
-- toggleClass()
-- parent()
-- children()
-- find()
-- remove()
-- append()
-- prepend()
-- css()
-- data()
-- on()
-
 
 
 <a name="DOM" href="#DOM">#</a> <b>$DOM()</b>
@@ -51,7 +31,7 @@ var boxes = $DOM('.boxes');
 
 
 
-<a name="text" href="#text">#</a> <b>el.text()</b>
+<a name="text" href="#text">#</a> <b>el.text([text])</b>
 
 Use the text() method to get or set the text content of an element. 
 
@@ -65,7 +45,7 @@ var text = $domEl.text();
 
 
 
-<a name="html" href="#html">#</a> <b>el.html()</b>
+<a name="html" href="#html">#</a> <b>el.html([html])</b>
 
 Use the html() method to get or set the html content of an element. 
 
@@ -79,7 +59,7 @@ var text = $domEl.html();
 
 
 
-<a name="attr" href="#attr">#</a> <b>el.attr()</b>
+<a name="attr" href="#attr">#</a> <b>el.attr(attrName[, attrValue])</b>
 
 Use the attr() method to get or set attributes on an element. 
 
@@ -93,7 +73,7 @@ var lastUpdated = $table.attr('data-updated');
 
 
 
-<a name="prop" href="#prop">#</a> <b>el.prop()</b>
+<a name="prop" href="#prop">#</a> <b>el.prop(propName[, propValue])</b>
 
 Use the prop() method to get or set properties on an element. 
 
@@ -107,7 +87,7 @@ var enteredValue = $input.prop('value');
 
 
 
-<a name="has-class" href="#has-class">#</a> <b>el.hasClass()</b>
+<a name="has-class" href="#has-class">#</a> <b>el.hasClass(className)</b>
 
 Use the hasClass() method to check whether a class is set on an element. 
 
@@ -117,7 +97,7 @@ var isAwesome = $domEl.hasClass('awesome-text');
 
 
 
-<a name="add-class" href="#add-class">#</a> <b>el.addClass()</b>
+<a name="add-class" href="#add-class">#</a> <b>el.addClass(className)</b>
 
 Use the addClass() method to add a class to an element, if it is not already set.
 
@@ -128,7 +108,7 @@ $domEl.addClass('awesome-text');
 
 
 
-<a name="remove-class" href="#remove-class">#</a> <b>el.removeClass()</b>
+<a name="remove-class" href="#remove-class">#</a> <b>el.removeClass(className)</b>
 
 Use the removeClass() method to remove a class on an element. 
 
@@ -139,7 +119,7 @@ $domEl.removeClass('awesome-text');
 
 
 
-<a name="toggle-class" href="#toggle-class">#</a> <b>el.toggleClass()</b>
+<a name="toggle-class" href="#toggle-class">#</a> <b>el.toggleClass(className)</b>
 
 Use the toggleClass() method to toggle a class on an element. 
 
@@ -181,4 +161,116 @@ items.forEach(function($item) {
 
 
 
-I hope to add better documentation here soon - in the meantime you can check out my blog posts which discuss each method.
+
+<a name="find" href="#find">#</a> <b>el.find(selector)</b>
+
+Use the find() method to get the descendant elements of the given element that match a provided selector. This will return an array of $DOM objects.
+
+```js
+var newItems = $items.find('.new-item');
+
+newItems.forEach(function($item) {
+  // so something with each item...
+});
+```
+
+
+
+
+<a name="remove" href="#remove">#</a> <b>el.remove()</b>
+
+Use the remove() method to remove the element from the document.
+
+```js
+$domEl.remove();
+```
+
+
+
+
+<a name="append" href="#append">#</a> <b>el.append(elem)</b>
+
+Use the append() method to insert an element as the last child of a parent element. This will return the appended element as a $DOM object.
+
+```js
+// Append a $DOM element
+$myList.append($newItem);
+
+// Append a raw HTML element
+$myList.append(li);
+
+// Append an element created on the fly
+$myList.append('<li>')
+  .addClass('new-item');
+```
+
+
+
+
+<a name="prepend" href="#prepend">#</a> <b>el.prepend(elem)</b>
+
+Use the prepend() method to insert an element as the first child of a parent element. This will return the prepended element as a $DOM object. See <a name="append" href="#append">el.append()</a> for all the ways you can use this method.
+
+
+
+
+<a name="css" href="#css">#</a> <b>el.css()</b>
+
+Use the css() method to set inline styles on an element, or to retrieve particular styles on an element as determined by the browser.
+
+```js
+// Set single style
+$item.css('color', 'red');
+
+// Set multiple styles
+$item.css({
+  color: 'red',
+  'font-weight': 'bold'
+});
+
+// Get a computed style by name
+var bg = $domEl.css('background-color');
+
+// Get all computed styles
+var allStyles = $domEl.css();
+```
+
+
+
+<a name="data" href="#data">#</a> <b>el.data()</b>
+
+Use the data() method to associate data with an element, or to retrieve data already set on an element using this method.
+
+```js
+// Set a data key and value
+$item.data('price', 100);
+
+// Set many data pieces at once
+$item.data({
+  price: 100,
+  discountPc: 10,
+  stock: 37
+});
+
+// Get a piece of data
+var price = $item.data('price');
+
+// Get all data associated with this element
+var data = $item.data();
+
+// Delete all data associated with this element by passing in null
+$item.data(null);
+```
+
+
+
+
+<a name="on" href="#on">#</a> <b>el.on(eventType, handlerFunc[, context])</b>
+
+Use the on() method add an event listener to an element. The optional argument context allows a custom value to be set for <b>this</b> inside the hander function. It defaults to the $DOM object that the event listener is being added to.
+
+```js
+$closeButton.on('click', function() {
+  this.parent().remove();
+});
+```
