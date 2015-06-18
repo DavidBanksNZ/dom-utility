@@ -87,7 +87,7 @@ var enteredValue = $input.prop('value');
 
 
 
-<a name="has-class" href="#has-class">#</a> <b>el.hasClass</b>(</>className</i>)
+<a name="has-class" href="#has-class">#</a> <b>el.hasClass</b>(<i>className</i>)
 
 Use the hasClass() method to check whether a class is set on an element. 
 
