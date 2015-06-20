@@ -23,7 +23,7 @@ describe('$DOM function', function() {
 
     it('should select elements matching specified selector', function() {
         
-        var $div, div
+        var $div, div;
 
         // Select all divs
         $div = $DOM('div'),
