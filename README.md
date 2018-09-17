@@ -1,4 +1,7 @@
 # DOM Utility
+
+Built as a learning experiment but feel free to use it!
+
 A custom DOM utility for a browser environment. Provides methods which will be familiar to users of jQuery.
 
 This is the code accompanying my series of blog posts on building your own DOM utility:
